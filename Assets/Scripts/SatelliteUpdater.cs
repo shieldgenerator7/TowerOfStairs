@@ -9,12 +9,22 @@ public class SatelliteUpdater : MonoBehaviour
     public float distanceOut = 11;
 
     private Vector3 basePosition;
+    public Vector3 BasePosition
+    {
+        get
+        {
+            if (basePosition == Vector3.zero)
+            {
+                basePosition = center.transform.position;
+                basePosition.y = transform.position.y;
+            }
+            return basePosition;
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        basePosition = center.transform.position;
-        basePosition.y = transform.position.y;
     }
 
     // Update is called once per frame
@@ -28,7 +38,7 @@ public class SatelliteUpdater : MonoBehaviour
     /// </summary>
     public void position()
     {
-        transform.position = basePosition + 
+        transform.position = BasePosition + 
             distanceOut * center.transform.forward.RotateY(angleOffset);
     }
 }

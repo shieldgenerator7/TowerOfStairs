@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEditor;
 
 [CustomEditor(typeof(SatelliteUpdater))]
+[CanEditMultipleObjects]
 public class SatelliteUpdaterEditor : Editor
 {
     public override void OnInspectorGUI()
