@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 50;
 
-    public Rotator stairCase;
+    public StairCaseManager stairCase;
 
     // Start is called before the first frame update
     void Start()
@@ -20,11 +20,7 @@ public class PlayerController : MonoBehaviour
         float horizontal = Input.GetAxis("Horizontal");
         if (horizontal != 0)
         {
-            stairCase.speed = moveSpeed * horizontal;
-        }
-        else
-        {
-            stairCase.speed = 0;
+            stairCase.spiralXPosition += moveSpeed * horizontal * Time.deltaTime;
         }
     }
 }
