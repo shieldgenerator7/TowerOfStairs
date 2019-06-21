@@ -154,13 +154,13 @@ MonoBehaviour:
   center: {fileID: 0}
   container: {fileID: 0}
   startY: -6
-  startAngle: 0
+  startAngle: 5
   yIncrement: 0.15
   angleIncrement: 0.15
   stairPrefab: {fileID: 5792194631009222407, guid: 112748c12b379224c9b222a9f48ed389,
     type: 3}
-  nextY: -6
-  nextAngle: 0
+  nextY: 9.000003
+  nextAngle: 19.999971
 --- !u!4 &233815762
 Transform:
   m_ObjectHideFlags: 0
