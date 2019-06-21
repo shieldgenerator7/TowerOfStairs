@@ -23,11 +23,21 @@ public class SatelliteUpdater : MonoBehaviour
     }
 
     private Collider2D coll;
+    public Collider2D Collider
+    {
+        get
+        {
+            if (coll == null)
+            {
+                coll = GetComponent<Collider2D>();
+            }
+            return coll;
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        coll = GetComponent<Collider2D>();
     }
 
     // Update is called once per frame
@@ -41,8 +51,8 @@ public class SatelliteUpdater : MonoBehaviour
     /// </summary>
     public void position()
     {
-        transform.position = BasePosition + 
+        transform.position = BasePosition +
             distanceOut * center.transform.forward.RotateY(angleOffset);
-        coll.enabled = transform.position.z <= 0;
+        Collider.enabled = transform.position.z <= 0;
     }
 }
